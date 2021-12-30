@@ -75,6 +75,8 @@ export class NgxMatIntlTelInputComponent extends _NgxMatIntlTelInputMixinBase
   @Input() errorStateMatcher: ErrorStateMatcher;
   @Input() enableSearch = false;
   @Input() searchPlaceholder: string;
+  @Input() countryAriaLabel: string = 'Country Code';
+  @Input() phoneAriaLabel: string = 'Phone Number';
 
   @Input()
   get format(): PhoneNumberFormat {
@@ -392,5 +394,12 @@ export class NgxMatIntlTelInputComponent extends _NgxMatIntlTelInputMixinBase
       this.phoneNumber = asYouType.input(this.phoneNumber.toString());
     }
     this.previousFormattedNumber = this.phoneNumber.toString();
+  }
+
+  focusCountryMenu() {
+    setTimeout(() => {
+      const elem: any = document.getElementsByClassName("country-list-button")[0]
+      elem.focus()
+    })
   }
 }

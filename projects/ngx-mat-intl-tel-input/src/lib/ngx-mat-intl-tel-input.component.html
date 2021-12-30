@@ -5,6 +5,8 @@
     [matMenuTriggerFor]="menu"
     class="country-selector"
     [disabled]="disabled"
+    (click)="focusCountryMenu()"
+    [attr.aria-label]="countryAriaLabel"
   >
     <span
       class="country-selector-flag flag"
@@ -69,6 +71,7 @@
     [errorStateMatcher]="errorStateMatcher"
     [placeholder]="inputPlaceholder"
     [disabled]="disabled"
+    [attr.aria-label]="phoneAriaLabel"
     #focusable
   />
 </div>
